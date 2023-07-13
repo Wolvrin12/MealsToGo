@@ -1,6 +1,14 @@
 import { Card, Text } from "react-native-paper";
+import { styled } from "styled-components";
 
 export const RestaurantCard = ({ restaurant = {} }) => {
+  const CardText = styled(Text)`
+    padding-top: ${(props) => props.theme.space[2]};
+    color: ${(props) => props.theme.colors.text.secondary};
+    font-size: ${(props) => props.theme.fontSizes.title};
+    font-family: ${(props) => props.theme.fonts.body};
+  `;
+
   const {
     name = "Wolvrin Restaurant",
     icon,
@@ -18,9 +26,7 @@ export const RestaurantCard = ({ restaurant = {} }) => {
       <Card>
         <Card.Cover source={{ uri: photos[0] }} />
         <Card.Content>
-          <Text variant="titleMedium" style={{ padding: 10 }}>
-            {name}
-          </Text>
+          <CardText>{name}</CardText>
         </Card.Content>
       </Card>
     </>

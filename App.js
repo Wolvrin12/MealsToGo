@@ -1,10 +1,13 @@
+import { ThemeProvider } from "styled-components";
+import { theme } from "./src/theme/index";
 import { Restaurants } from "./src/features/restaurants";
 
 export default function App() {
   return (
     <>
-      <Restaurants></Restaurants>
+      <ThemeProvider theme={theme}>
+        <Restaurants></Restaurants>
+      </ThemeProvider>
     </>
   );
 }
-// const styles = StyleSheet.create({});
