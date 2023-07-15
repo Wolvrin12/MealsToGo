@@ -1,14 +1,14 @@
 import { SafeAreaView, StatusBar, View } from "react-native";
 import { Searchbar } from "react-native-paper";
 import { RestaurantCard } from "../components/reastaurant_card";
-import { useFonts, Nunito_400Regular } from "@expo-google-fonts/nunito";
+import { useFonts, Nunito_600SemiBold } from "@expo-google-fonts/nunito";
 import { Ubuntu_400Regular } from "@expo-google-fonts/ubuntu";
 import { Rubik_400Regular } from "@expo-google-fonts/rubik";
 import { styled } from "styled-components";
 
 export const Restaurants = () => {
   let [fontsLoaded] = useFonts({
-    Nunito_400Regular,
+    Nunito_600SemiBold,
     Ubuntu_400Regular,
     Rubik_400Regular,
   });
@@ -24,13 +24,11 @@ export const Restaurants = () => {
 
   const RestaurantsSearch = styled(View)`
     padding: ${(props) => props.theme.space[3]};
-    background-color: ${(props) => props.theme.colors.bg.primary};
   `;
 
   const RestaurantsScreen = styled(View)`
     flex: 1;
     padding: ${(props) => props.theme.space[3]};
-    background-color: ${(props) => props.theme.colors.bg.secondary};
   `;
 
   return (

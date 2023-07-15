@@ -19,7 +19,7 @@ export const colors = {
     tertiary: "#feefec",
   },
   text: {
-    primary: "#dc9cfd",
+    primary: "#0a62fa",
     secondary: "#FFB07F",
     disabled: "#9c9c9c",
     inverse: "#ffffff",

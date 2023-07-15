@@ -1,5 +1,5 @@
 export const fonts = {
-  body: "Nunito_400Regular",
+  body: "Nunito_600SemiBold",
   heading: "Ubuntu_400Regular",
   monospace: "Rubik_400Regular",
 };
