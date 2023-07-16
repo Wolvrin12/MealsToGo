@@ -4,6 +4,7 @@ import { styled } from "styled-components";
 import { Image, View } from "react-native";
 import star from "../../assets/star";
 import open from "../../assets/open";
+import { Spacer } from "./spacer";
 
 export const RestaurantCard = ({ restaurant = {} }) => {
   const CardContent = styled(Card.Content)`
@@ -61,24 +62,20 @@ export const RestaurantCard = ({ restaurant = {} }) => {
           <CardTitle>{name}</CardTitle>
           <CardPreferences>
             <CardRating>
-              {ratingArray.map((index) => (
-                <SvgXml xml={star} width={20} height={20} key={index} />
+              {ratingArray.map(() => (
+                <SvgXml xml={star} width={20} height={20} key={Math.random()} />
               ))}
             </CardRating>
             <CardStatus>
               {isClosedTemporarily && (
-                <Text
-                  variant="titleMedium"
-                  style={{ color: "red", marginRight: 16 }}
-                >
+                <Text variant="titleMedium" style={{ color: "red" }}>
                   Closed Temporarily
                 </Text>
               )}
+              <Spacer variant="left.medium" />
               {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
-              <Image
-                style={{ width: 15, height: 15, marginLeft: 16 }}
-                source={{ uri: icon }}
-              />
+              <Spacer variant="left.medium" />
+              <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
             </CardStatus>
           </CardPreferences>
           <CardAdress>{adress}</CardAdress>
