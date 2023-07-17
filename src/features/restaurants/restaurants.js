@@ -1,6 +1,6 @@
 import { SafeAreaView, StatusBar, View } from "react-native";
 import { Searchbar } from "react-native-paper";
-import { RestaurantCard } from "../components/reastaurant_card";
+import { RestaurantCard } from "./reastaurant_card";
 import { useFonts, Nunito_600SemiBold } from "@expo-google-fonts/nunito";
 import { Ubuntu_400Regular } from "@expo-google-fonts/ubuntu";
 import { Rubik_400Regular } from "@expo-google-fonts/rubik";

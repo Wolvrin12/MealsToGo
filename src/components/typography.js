@@ -33,10 +33,13 @@ const caption = (theme) => `
 
 const error = (theme) => `
   color: ${theme.colors.text.error};
+  font-weight: ${theme.fontWeights.bold};
 `;
 
 const hint = (theme) => `
-  font-size: ${theme.fontSizes.body};
+  color: ${theme.colors.text.secondary};
+  font-size: ${theme.fontSizes.caption};
+  font-family: ${theme.fonts.monospace};
 `;
 
 const variants = {

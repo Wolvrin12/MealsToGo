@@ -1,45 +1,19 @@
-import { Card, Text } from "react-native-paper";
+import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
-import { styled } from "styled-components";
-import { Image, View } from "react-native";
-import { TypoText } from "../components/typography";
-import { Spacer } from "./spacer";
-import star from "../../assets/star";
-import open from "../../assets/open";
+import { TypoText } from "../../components/typography";
+import { Spacer } from "../../components/spacer";
+import star from "../../../assets/star";
+import open from "../../../assets/open";
+import {
+  CardAdress,
+  CardContent,
+  CardPreferences,
+  CardRating,
+  CardStatus,
+  Icon,
+} from "./styles";
 
 export const RestaurantCard = ({ restaurant = {} }) => {
-  const CardContent = styled(Card.Content)`
-    padding: ${(props) => props.theme.space[3]};
-  `;
-
-  const CardPreferences = styled(View)`
-    flex-direction: row;
-    align-items: center;
-  `;
-
-  const CardRating = styled(View)`
-    flex-direction: row;
-    padding: ${(props) => props.theme.space[2]} 0;
-  `;
-
-  const CardStatus = styled(View)`
-    flex: 1;
-    flex-direction: row;
-    justify-content: flex-end;
-  `;
-
-  const Icon = styled(Image)`
-    width: 15px;
-    height: 15px;
-  `;
-
-  const CardAdress = styled(Text)`
-    padding: ${(props) => props.theme.space[2]} 0;
-    color: ${(props) => props.theme.colors.text.secondary};
-    font-size: ${(props) => props.theme.fontSizes.caption};
-    font-family: ${(props) => props.theme.fonts.monospace};
-  `;
-
   const {
     name = "Wolvrin Restaurant",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
@@ -78,7 +52,7 @@ export const RestaurantCard = ({ restaurant = {} }) => {
               </Spacer>
             </CardStatus>
           </CardPreferences>
-          <CardAdress>{adress}</CardAdress>
+          <TypoText variant="hint">{adress}</TypoText>
         </CardContent>
       </Card>
     </>
