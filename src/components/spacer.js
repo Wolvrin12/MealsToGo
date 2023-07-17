@@ -8,10 +8,10 @@ const sizeVariant = {
 };
 
 const positionVariant = {
-  top: "margin-top",
-  right: "margin-right",
-  bottom: "margin-bottom",
-  left: "margin-left",
+  top: "marginTop",
+  right: "marginRight",
+  bottom: "marginBottom",
+  left: "marginLeft",
 };
 
 const getVariant = (position, size, theme) => {

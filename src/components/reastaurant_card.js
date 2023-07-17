@@ -2,19 +2,14 @@ import { Card, Text } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 import { styled } from "styled-components";
 import { Image, View } from "react-native";
+import { TypoText } from "../components/typography";
+import { Spacer } from "./spacer";
 import star from "../../assets/star";
 import open from "../../assets/open";
-import { Spacer } from "./spacer";
 
 export const RestaurantCard = ({ restaurant = {} }) => {
   const CardContent = styled(Card.Content)`
     padding: ${(props) => props.theme.space[3]};
-  `;
-
-  const CardTitle = styled(Text)`
-    color: ${(props) => props.theme.colors.text.primary};
-    font-size: ${(props) => props.theme.fontSizes.title};
-    font-family: ${(props) => props.theme.fonts.body};
   `;
 
   const CardPreferences = styled(View)`
@@ -31,6 +26,11 @@ export const RestaurantCard = ({ restaurant = {} }) => {
     flex: 1;
     flex-direction: row;
     justify-content: flex-end;
+  `;
+
+  const Icon = styled(Image)`
+    width: 15px;
+    height: 15px;
   `;
 
   const CardAdress = styled(Text)`
@@ -59,7 +59,7 @@ export const RestaurantCard = ({ restaurant = {} }) => {
       <Card>
         <Card.Cover source={{ uri: photos[0] }} />
         <CardContent>
-          <CardTitle>{name}</CardTitle>
+          <TypoText variant="title">{name}</TypoText>
           <CardPreferences>
             <CardRating>
               {ratingArray.map(() => (
@@ -68,15 +68,14 @@ export const RestaurantCard = ({ restaurant = {} }) => {
             </CardRating>
             <CardStatus>
               {isClosedTemporarily && (
-                <Text variant="titleMedium" style={{ color: "red" }}>
-                  Closed Temporarily
-                </Text>
+                <TypoText variant="error">Closed Temporarily</TypoText>
               )}
-              <Spacer position="left" size="large" />
-              {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
-
-              <Spacer position="left" size="large" />
-              <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
+              <Spacer position="left" size="large">
+                {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
+              </Spacer>
+              <Spacer position="left" size="large">
+                <Icon source={{ uri: icon }} />
+              </Spacer>
             </CardStatus>
           </CardPreferences>
           <CardAdress>{adress}</CardAdress>
