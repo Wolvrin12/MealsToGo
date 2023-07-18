@@ -1,6 +1,20 @@
 import { styled } from "styled-components";
-import { Image, View } from "react-native";
+import { FlatList, Image, View } from "react-native";
 import { Card, Text } from "react-native-paper";
+
+export const RestaurantsSearch = styled(View)`
+  padding: ${(props) => props.theme.space[3]};
+`;
+
+export const RestaurantList = styled(FlatList).attrs({
+  contentContainerStyle: {
+    padding: 16,
+  },
+})``;
+
+export const RestaurantCard = styled(Card)`
+  background-color: ${(props) => props.theme.colors.bg.primary};
+`;
 
 export const CardContent = styled(Card.Content)`
   padding: ${(props) => props.theme.space[3]};

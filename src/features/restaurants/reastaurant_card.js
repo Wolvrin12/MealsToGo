@@ -5,15 +5,15 @@ import { Spacer } from "../../components/spacer";
 import star from "../../../assets/star";
 import open from "../../../assets/open";
 import {
-  CardAdress,
   CardContent,
   CardPreferences,
   CardRating,
   CardStatus,
   Icon,
+  RestaurantCard,
 } from "./styles";
 
-export const RestaurantCard = ({ restaurant = {} }) => {
+export const RestaurantCardGenerator = ({ restaurant = {} }) => {
   const {
     name = "Wolvrin Restaurant",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
@@ -30,7 +30,7 @@ export const RestaurantCard = ({ restaurant = {} }) => {
 
   return (
     <>
-      <Card>
+      <RestaurantCard elevation={5}>
         <Card.Cover source={{ uri: photos[0] }} />
         <CardContent>
           <TypoText variant="title">{name}</TypoText>
@@ -54,7 +54,7 @@ export const RestaurantCard = ({ restaurant = {} }) => {
           </CardPreferences>
           <TypoText variant="hint">{adress}</TypoText>
         </CardContent>
-      </Card>
+      </RestaurantCard>
     </>
   );
 };
