@@ -1,7 +1,7 @@
-import { Card } from "react-native-paper";
-import { SvgXml } from "react-native-svg";
 import { TypoText } from "../../components/typography";
 import { Spacer } from "../../components/spacer";
+import { Card } from "react-native-paper";
+import { SvgXml } from "react-native-svg";
 import star from "../../../assets/star";
 import open from "../../../assets/open";
 import {

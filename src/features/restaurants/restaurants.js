@@ -1,23 +1,10 @@
-import { useFonts, Nunito_600SemiBold } from "@expo-google-fonts/nunito";
-import { Ubuntu_400Regular } from "@expo-google-fonts/ubuntu";
 import { RestaurantCardGenerator } from "./reastaurant_card";
 import { RestaurantList, RestaurantsSearch } from "./styles";
-import { Rubik_400Regular } from "@expo-google-fonts/rubik";
 import { SafeArea } from "../../components/safe-area";
 import { Spacer } from "../../components/spacer";
 import { Searchbar } from "react-native-paper";
 
 export const Restaurants = () => {
-  let [fontsLoaded] = useFonts({
-    Nunito_600SemiBold,
-    Ubuntu_400Regular,
-    Rubik_400Regular,
-  });
-
-  if (!fontsLoaded) {
-    return null;
-  }
-
   return (
     <>
       <SafeArea>
