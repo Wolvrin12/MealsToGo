@@ -5,13 +5,13 @@ import { SvgXml } from "react-native-svg";
 import star from "../../../assets/star";
 import open from "../../../assets/open";
 import {
+  RestaurantCard,
   CardContent,
   CardPreferences,
   CardRating,
   CardStatus,
   Icon,
-  RestaurantCard,
-} from "./styles";
+} from "./restaurants_styles";
 
 export const RestaurantCardGenerator = ({ restaurant = {} }) => {
   const {

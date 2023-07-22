@@ -1,6 +1,20 @@
-import { styled } from "styled-components";
+import { ActivityIndicator, Card, Text } from "react-native-paper";
 import { FlatList, Image, View } from "react-native";
-import { Card, Text } from "react-native-paper";
+import { styled } from "styled-components";
+
+export const RestaurantCard = styled(Card)`
+  background-color: ${(props) => props.theme.colors.bg.primary};
+`;
+
+export const LoadingContainer = styled(View)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+`;
+
+export const Loading = styled(ActivityIndicator)`
+  margin-left: -25px;
+`;
 
 export const RestaurantsSearch = styled(View)`
   padding: ${(props) => props.theme.space[3]};
@@ -11,10 +25,6 @@ export const RestaurantList = styled(FlatList).attrs({
     padding: 16,
   },
 })``;
-
-export const RestaurantCard = styled(Card)`
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
 
 export const CardContent = styled(Card.Content)`
   padding: ${(props) => props.theme.space[3]};
