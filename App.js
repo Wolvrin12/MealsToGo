@@ -1,3 +1,4 @@
+import { RestaurantsContextProvider } from "./src/features/restaurants/service/context";
 import { useFonts, Nunito_600SemiBold } from "@expo-google-fonts/nunito";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Restaurants } from "./src/features/restaurants/restaurants";
@@ -59,13 +60,15 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <Tab.Navigator screenOptions={tabBarIcons}>
-            <Tab.Screen name="Restaurants" component={Restaurants} />
-            <Tab.Screen name="Map" component={Map} />
-            <Tab.Screen name="Settings" component={Settings} />
-          </Tab.Navigator>
-        </NavigationContainer>
+        <RestaurantsContextProvider>
+          <NavigationContainer>
+            <Tab.Navigator screenOptions={tabBarIcons}>
+              <Tab.Screen name="Restaurants" component={Restaurants} />
+              <Tab.Screen name="Map" component={Map} />
+              <Tab.Screen name="Settings" component={Settings} />
+            </Tab.Navigator>
+          </NavigationContainer>
+        </RestaurantsContextProvider>
       </ThemeProvider>
     </>
   );

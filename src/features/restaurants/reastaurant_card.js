@@ -31,13 +31,13 @@ export const RestaurantCardGenerator = ({ restaurant = {} }) => {
   return (
     <>
       <RestaurantCard elevation={5}>
-        <Card.Cover source={{ uri: photos[0] }} />
+        <Card.Cover source={{ uri: photos }} />
         <CardContent>
           <TypoText variant="title">{name}</TypoText>
           <CardPreferences>
             <CardRating>
               {ratingArray.map(() => (
-                <SvgXml xml={star} width={20} height={20} key={Math.random()} />
+                <SvgXml xml={star} width={20} height={20} />
               ))}
             </CardRating>
             <CardStatus>
