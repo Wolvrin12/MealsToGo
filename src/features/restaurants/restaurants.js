@@ -12,7 +12,7 @@ import {
 } from "./restaurants_styles";
 
 export const Restaurants = () => {
-  const { restaurants, isLoading, error } = useContext(RestaurantsContext);
+  const { restaurants, isLoading } = useContext(RestaurantsContext);
   return (
     <>
       <SafeArea>
