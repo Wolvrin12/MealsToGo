@@ -1,9 +1,9 @@
-import { TypoText } from "../../components/typography";
-import { Spacer } from "../../components/spacer";
+import { TypoText } from "../../../components/typography";
+import { Spacer } from "../../../components/spacer";
+import star from "../../../../assets/star";
+import open from "../../../../assets/open";
 import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
-import star from "../../../assets/star";
-import open from "../../../assets/open";
 import {
   RestaurantCard,
   CardContent,
@@ -11,7 +11,7 @@ import {
   CardRating,
   CardStatus,
   Icon,
-} from "./restaurants_styles";
+} from "../styles/restaurants_styles";
 
 export const RestaurantCardGenerator = ({ restaurant = {} }) => {
   const {
@@ -20,10 +20,11 @@ export const RestaurantCardGenerator = ({ restaurant = {} }) => {
     photos = [
       "https://t3.ftcdn.net/jpg/03/24/73/92/360_F_324739203_keeq8udvv0P2h1MLYJ0GLSlTBagoXS48.jpg",
     ],
-    adress = "36 Street, Madrid, Spain",
+    address = "36 Street, Madrid, Spain",
     isOpenNow = true,
     rating = 4.5,
     isClosedTemporarily = true,
+    placeId,
   } = restaurant;
 
   const ratingArray = Array.from(new Array(Math.floor(rating)));
@@ -31,13 +32,18 @@ export const RestaurantCardGenerator = ({ restaurant = {} }) => {
   return (
     <>
       <RestaurantCard elevation={5}>
-        <Card.Cover source={{ uri: photos }} />
+        <Card.Cover key={name} source={{ uri: photos[0] }} />
         <CardContent>
           <TypoText variant="title">{name}</TypoText>
           <CardPreferences>
             <CardRating>
-              {ratingArray.map(() => (
-                <SvgXml xml={star} width={20} height={20} />
+              {ratingArray.map((_, i) => (
+                <SvgXml
+                  key={`star-${placeId}-${i}`}
+                  xml={star}
+                  width={20}
+                  height={20}
+                />
               ))}
             </CardRating>
             <CardStatus>
@@ -52,7 +58,7 @@ export const RestaurantCardGenerator = ({ restaurant = {} }) => {
               </Spacer>
             </CardStatus>
           </CardPreferences>
-          <TypoText variant="hint">{adress}</TypoText>
+          <TypoText variant="hint">{address}</TypoText>
         </CardContent>
       </RestaurantCard>
     </>

@@ -3,12 +3,12 @@ import { RestaurantsContext } from "./service/context";
 import { SafeArea } from "../../components/safe-area";
 import { Spacer } from "../../components/spacer";
 import { theme } from "../../utils/theme/index";
-import { Searchbar } from "react-native-paper";
+import { Search } from "./restaurants_search";
 import { useContext } from "react";
 import {
   Loading,
+  LoadingContainer,
   RestaurantList,
-  RestaurantsSearch,
 } from "./restaurants_styles";
 
 export const Restaurants = () => {
@@ -25,13 +25,10 @@ export const Restaurants = () => {
             />
           </LoadingContainer>
         )}
-        <RestaurantsSearch>
-          <Searchbar placeholder="Search" elevation="5" />
-        </RestaurantsSearch>
+        <Search />
         <RestaurantList
           data={restaurants}
           renderItem={({ item }) => {
-            console.log(item.photos);
             return (
               <Spacer position="bottom" size="large">
                 <RestaurantCardGenerator restaurant={item} />
