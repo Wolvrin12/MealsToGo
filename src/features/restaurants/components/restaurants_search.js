@@ -1,5 +1,5 @@
-import { LocationContext } from "./service/locations/context";
-import { RestaurantsSearch } from "./restaurants_styles";
+import { RestaurantsSearch } from "../styles/restaurants_styles";
+import { LocationContext } from "../service/locations/context";
 import { Searchbar } from "react-native-paper";
 import { useContext, useState } from "react";
 
