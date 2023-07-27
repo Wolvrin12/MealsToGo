@@ -4,6 +4,7 @@ import { styled } from "styled-components";
 
 export const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
+  margin: ${(props) => props.theme.space[2]};
 `;
 
 export const LoadingContainer = styled(View)`
