@@ -1,10 +1,9 @@
-import { Restaurants } from "../../features/restaurants/restaurants";
-import { Text } from "react-native";
+import { RestaurantDetails } from "../../components/restaurant_details";
+import { Restaurants } from "../../restaurants";
 import {
   createStackNavigator,
   TransitionPresets,
 } from "@react-navigation/stack";
-import { RestaurantDetails } from "../../features/restaurants/components/restaurant_details";
 
 const RestaurantsStack = createStackNavigator();
 

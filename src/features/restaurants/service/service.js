@@ -7,9 +7,6 @@ export const restaurantsRequest = (location) => {
     if (!mock) {
       reject("not found");
     }
-    console.log("====================================");
-    console.log(mock);
-    console.log("====================================");
     resolve(mock);
   });
 };

@@ -1,7 +1,7 @@
 import { LocationContextProvider } from "./src/features/restaurants/service/locations/context";
 import { RestaurantsContextProvider } from "./src/features/restaurants/service/context";
+import { NavigationHundler } from "./src/features/restaurants/navigation/navigator";
 import { useFonts, Nunito_600SemiBold } from "@expo-google-fonts/nunito";
-import { NavigationHundler } from "./src/navigation/navigator";
 import { Ubuntu_400Regular } from "@expo-google-fonts/ubuntu";
 import { Rubik_400Regular } from "@expo-google-fonts/rubik";
 import { ThemeProvider } from "styled-components";
