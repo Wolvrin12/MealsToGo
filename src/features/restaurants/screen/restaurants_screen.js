@@ -1,5 +1,5 @@
-import { RestaurantDetails } from "../../components/restaurant_details";
-import { Restaurants } from "../../restaurants";
+import { RestaurantDetails } from "../components/restaurant_details";
+import { Restaurants } from "../container/restaurants";
 import {
   createStackNavigator,
   TransitionPresets,
@@ -10,12 +10,15 @@ const RestaurantsStack = createStackNavigator();
 export const RestaurantsScreen = () => {
   return (
     <RestaurantsStack.Navigator
-      headerMode="none"
       screenOptions={{
         ...TransitionPresets.ModalPresentationIOS,
+        headerShown: false,
       }}
     >
-      <RestaurantsStack.Screen name="Restaurants" component={Restaurants} />
+      <RestaurantsStack.Screen
+        name="Restaurants Screen"
+        component={Restaurants}
+      />
       <RestaurantsStack.Screen
         name="Restaurant Detail"
         component={RestaurantDetails}

@@ -1,16 +1,16 @@
-import { RestaurantCardGenerator } from "./components/reastaurant_card_generator";
-import { Search } from "./components/restaurants_search";
-import { RestaurantsContext } from "./service/context";
-import { SafeArea } from "../../components/safe-area";
-import { Spacer } from "../../components/spacer";
-import { theme } from "../../utils/theme/index";
+import { RestaurantCardGenerator } from "../components/reastaurant_card_generator";
+import { Search } from "../components/restaurants_search";
+import { SafeArea } from "../../../components/safe-area";
+import { RestaurantsContext } from "../service/context";
+import { Spacer } from "../../../components/spacer";
+import { theme } from "../../../utils/theme/index";
 import { TouchableOpacity } from "react-native";
 import { useContext } from "react";
 import {
   Loading,
   LoadingContainer,
   RestaurantList,
-} from "./styles/restaurants_styles";
+} from "../styles/restaurants_styles";
 
 export const Restaurants = ({ navigation }) => {
   const { restaurants, isLoading } = useContext(RestaurantsContext);
