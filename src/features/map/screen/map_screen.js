@@ -6,7 +6,7 @@ import { Marker, Callout } from "react-native-maps";
 import { Search } from "../components/map_search";
 import { Map } from "../styles/map_styles";
 
-export const MapScreen = () => {
+export const MapScreen = ({ navigation }) => {
   const { location } = useContext(LocationContext);
   const { restaurants = [] } = useContext(RestaurantsContext);
   const [latDelta, setLatDelta] = useState(0);
@@ -39,7 +39,11 @@ export const MapScreen = () => {
                 longitude: restaurant.geometry.location.lng,
               }}
             >
-              <Callout>
+              <Callout
+                onPress={() =>
+                  navigation.navigate("Restaurant Detail", { restaurant })
+                }
+              >
                 <MapCallout
                   name={restaurant.name}
                   photo={restaurant.photos[0]}
