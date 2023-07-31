@@ -1,7 +1,7 @@
 import { RestaurantsScreen } from "../features/restaurants/screen/restaurants_screen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MapsScreen } from "../features/maps/screen/maps_screen";
 import { NavigationContainer } from "@react-navigation/native";
+import { MapScreen } from "../features/map/screen/map_screen";
 import { SafeArea } from "../components/safe-area";
 import { Ionicons } from "@expo/vector-icons";
 import { theme } from "../utils/theme";
@@ -40,7 +40,7 @@ export const NavigationHundler = () => {
     <NavigationContainer>
       <Tab.Navigator screenOptions={tabBarIcons}>
         <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
-        <Tab.Screen name="Map" component={MapsScreen} />
+        <Tab.Screen name="Map" component={MapScreen} />
         <Tab.Screen name="Settings" component={Settings} />
       </Tab.Navigator>
     </NavigationContainer>

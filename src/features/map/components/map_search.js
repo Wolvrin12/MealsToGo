@@ -1,6 +1,6 @@
 import { LocationContext } from "../../restaurants/service/locations/context";
 import { useContext, useEffect, useState } from "react";
-import { MapsSearch } from "../styles/maps_styles";
+import { MapSearch } from "../styles/map_styles";
 import { Searchbar } from "react-native-paper";
 
 export const Search = () => {
@@ -12,7 +12,7 @@ export const Search = () => {
   }, [keyword]);
 
   return (
-    <MapsSearch>
+    <MapSearch>
       <Searchbar
         placeholder="Search for a location"
         icon="map"
@@ -24,6 +24,6 @@ export const Search = () => {
           setSearchKeyword(text);
         }}
       />
-    </MapsSearch>
+    </MapSearch>
   );
 };

@@ -1,12 +1,12 @@
 import { LocationContext } from "../../restaurants/service/locations/context";
 import { RestaurantsContext } from "../../restaurants/service/context";
-import { MapsCallout } from "../components/maps_callout";
+import { MapCallout } from "../components/map_callout";
 import { useContext, useEffect, useState } from "react";
 import { Marker, Callout } from "react-native-maps";
-import { Search } from "../components/maps_search";
-import { Map } from "../styles/maps_styles";
+import { Search } from "../components/map_search";
+import { Map } from "../styles/map_styles";
 
-export const MapsScreen = () => {
+export const MapScreen = () => {
   const { location } = useContext(LocationContext);
   const { restaurants = [] } = useContext(RestaurantsContext);
   const [latDelta, setLatDelta] = useState(0);
@@ -40,7 +40,10 @@ export const MapsScreen = () => {
               }}
             >
               <Callout>
-                <MapsCallout name={restaurant.name} />
+                <MapCallout
+                  name={restaurant.name}
+                  photo={restaurant.photos[0]}
+                />
               </Callout>
             </Marker>
           );
