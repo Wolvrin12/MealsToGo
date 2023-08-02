@@ -2,7 +2,7 @@ import { RestaurantsScreen } from "../features/restaurants/screen/restaurants_sc
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import { MapScreen } from "../features/map/screen/map_screen";
-import { SafeArea } from "../components/safe-area";
+import { SafeArea } from "../components/safe_area";
 import { Ionicons } from "@expo/vector-icons";
 import { theme } from "../utils/theme";
 import { Text } from "react-native";

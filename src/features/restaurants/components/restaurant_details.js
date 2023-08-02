@@ -1,5 +1,5 @@
 import { RestaurantCardGenerator } from "./reastaurant_card_generator";
-import { SafeArea } from "../../../components/safe-area";
+import { SafeArea } from "../../../components/safe_area";
 import { List } from "react-native-paper";
 import { ScrollView } from "react-native";
 import { useState } from "react";

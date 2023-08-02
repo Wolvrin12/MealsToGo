@@ -1,6 +1,7 @@
 import { RestaurantCardGenerator } from "../components/reastaurant_card_generator";
+import { FavouritesContext } from "../service/favourites/context";
 import { Search } from "../components/restaurants_search";
-import { SafeArea } from "../../../components/safe-area";
+import { SafeArea } from "../../../components/safe_area";
 import { RestaurantsContext } from "../service/context";
 import { Spacer } from "../../../components/spacer";
 import { theme } from "../../../utils/theme/index";
@@ -14,6 +15,7 @@ import {
 
 export const Restaurants = ({ navigation }) => {
   const { restaurants, isLoading } = useContext(RestaurantsContext);
+  const { favourites } = useContext(FavouritesContext);
 
   return (
     <>

@@ -1,3 +1,4 @@
+import { FavouriteIcon } from "../../../components/favourite_icon";
 import { TypoText } from "../../../components/typography";
 import { Spacer } from "../../../components/spacer";
 import star from "../../../../assets/star";
@@ -5,24 +6,24 @@ import open from "../../../../assets/open";
 import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 import {
-  RestaurantCard,
-  CardContent,
-  CardPreferences,
+  Icon,
   CardRating,
   CardStatus,
-  Icon,
+  CardContent,
+  RestaurantCard,
+  CardPreferences,
 } from "../styles/restaurants_styles";
 
 export const RestaurantCardGenerator = ({ restaurant = {} }) => {
   const {
-    name = "Wolvrin Restaurant",
+    name = "Restaurant",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos = [
       "https://t3.ftcdn.net/jpg/03/24/73/92/360_F_324739203_keeq8udvv0P2h1MLYJ0GLSlTBagoXS48.jpg",
     ],
-    address = "36 Street, Madrid, Spain",
-    isOpenNow = true,
-    rating = 4.5,
+    address = "Unknown",
+    isOpenNow = false,
+    rating = 1,
     isClosedTemporarily = true,
     placeId,
   } = restaurant;
@@ -32,6 +33,7 @@ export const RestaurantCardGenerator = ({ restaurant = {} }) => {
   return (
     <>
       <RestaurantCard elevation={5}>
+        <FavouriteIcon />
         <Card.Cover key={name} source={{ uri: photos[0] }} />
         <CardContent>
           <TypoText variant="title">{name}</TypoText>

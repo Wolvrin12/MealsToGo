@@ -1,3 +1,4 @@
+import { FavouritesContextProvider } from "./src/features/restaurants/service/favourites/context";
 import { LocationContextProvider } from "./src/features/restaurants/service/locations/context";
 import { RestaurantsContextProvider } from "./src/features/restaurants/service/context";
 import { useFonts, Nunito_600SemiBold } from "@expo-google-fonts/nunito";
@@ -22,11 +23,13 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <LocationContextProvider>
-          <RestaurantsContextProvider>
-            <NavigationHundler />
-          </RestaurantsContextProvider>
-        </LocationContextProvider>
+        <FavouritesContextProvider>
+          <LocationContextProvider>
+            <RestaurantsContextProvider>
+              <NavigationHundler />
+            </RestaurantsContextProvider>
+          </LocationContextProvider>
+        </FavouritesContextProvider>
       </ThemeProvider>
       <StatusBar style="auto" />
     </>
