@@ -6,12 +6,12 @@ import open from "../../../../assets/open";
 import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 import {
-  Icon,
+  CardPreferences,
+  RestaurantCard,
+  CardContent,
   CardRating,
   CardStatus,
-  CardContent,
-  RestaurantCard,
-  CardPreferences,
+  Icon,
 } from "../styles/restaurants_styles";
 
 export const RestaurantCardGenerator = ({ restaurant = {} }) => {
@@ -33,7 +33,7 @@ export const RestaurantCardGenerator = ({ restaurant = {} }) => {
   return (
     <>
       <RestaurantCard elevation={5}>
-        <FavouriteIcon />
+        <FavouriteIcon restaurant={restaurant} />
         <Card.Cover key={name} source={{ uri: photos[0] }} />
         <CardContent>
           <TypoText variant="title">{name}</TypoText>
