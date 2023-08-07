@@ -1,6 +1,6 @@
-import { FavouritesContextProvider } from "./src/features/restaurants/service/favourites/context";
-import { LocationContextProvider } from "./src/features/restaurants/service/locations/context";
-import { RestaurantsContextProvider } from "./src/features/restaurants/service/context";
+import { FavouritesContextProvider } from "./src/features/restaurants/services/favourites/context";
+import { LocationContextProvider } from "./src/features/restaurants/services/locations/context";
+import { RestaurantsContextProvider } from "./src/features/restaurants/services/data/context";
 import { useFonts, Nunito_600SemiBold } from "@expo-google-fonts/nunito";
 import { NavigationHundler } from "./src/navigation/navigator";
 import { Ubuntu_400Regular } from "@expo-google-fonts/ubuntu";
@@ -8,8 +8,9 @@ import { Rubik_400Regular } from "@expo-google-fonts/rubik";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./src/utils/theme/index";
 import { StatusBar } from "expo-status-bar";
+import { useEffect, useState } from "react";
 
-export default function App() {
+const App = () => {
   let [fontsLoaded] = useFonts({
     Nunito_600SemiBold,
     Ubuntu_400Regular,
@@ -34,4 +35,6 @@ export default function App() {
       <StatusBar style="auto" />
     </>
   );
-}
+};
+
+export default App;

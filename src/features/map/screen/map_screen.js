@@ -1,5 +1,5 @@
-import { LocationContext } from "../../restaurants/service/locations/context";
-import { RestaurantsContext } from "../../restaurants/service/context";
+import { LocationContext } from "../../restaurants/services/locations/context";
+import { RestaurantsContext } from "../../restaurants/services/data/context";
 import { MapCallout } from "../components/map_callout";
 import { useContext, useEffect, useState } from "react";
 import { Marker, Callout } from "react-native-maps";

@@ -17,19 +17,19 @@ export const MapSearch = styled(View)`
 `;
 
 export const MapCompactImg = styled(Image)`
-  border-radius: ${(props) => props.theme.sizes[0]};
-  width: ${(props) => props.theme.sizes[4]};
-  height: ${(props) => props.theme.sizes[4]};
+  border-radius: 10px;
+  width: 120px;
+  height: 100px;
 `;
 
 export const MapCompactWebView = styled(WebView)`
-  width: ${(props) => props.theme.sizes[4]};
-  height: ${(props) => props.theme.sizes[4]};
+  border-radius: 10px;
+  width: 120px;
+  height: 100px;
 `;
 
 export const MapItem = styled(View)`
-  border-radius: ${(props) => props.theme.sizes[3]};
-  padding: ${(props) => props.theme.space[2]};
-  max-width: ${(props) => props.theme.space[7]};
+  padding: 10px;
+  max-width: 120px;
   align-items: center;
 `;

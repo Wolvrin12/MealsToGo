@@ -1,4 +1,4 @@
-import { FavouriteIcon } from "../../../components/favourite_icon";
+import { FavouriteIcon } from "../components/favourites/favourite_icon";
 import { TypoText } from "../../../components/typography";
 import { Spacer } from "../../../components/spacer";
 import star from "../../../../assets/star";

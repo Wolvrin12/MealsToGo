@@ -1,21 +1,23 @@
 import { RestaurantCardGenerator } from "../components/reastaurant_card_generator";
-import { FavouritesContext } from "../service/favourites/context";
+import { FavouritesBar } from "../components/favourites/favourites_bar";
+import { FavouritesContext } from "../services/favourites/context";
+import { RestaurantsContext } from "../services/data/context";
 import { Search } from "../components/restaurants_search";
 import { SafeArea } from "../../../components/safe_area";
-import { RestaurantsContext } from "../service/context";
 import { Spacer } from "../../../components/spacer";
 import { theme } from "../../../utils/theme/index";
 import { TouchableOpacity } from "react-native";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import {
-  Loading,
   LoadingContainer,
   RestaurantList,
+  Loading,
 } from "../styles/restaurants_styles";
 
 export const Restaurants = ({ navigation }) => {
   const { restaurants, isLoading } = useContext(RestaurantsContext);
   const { favourites } = useContext(FavouritesContext);
+  const [isToggled, setIsToggled] = useState(false);
 
   return (
     <>
@@ -29,7 +31,16 @@ export const Restaurants = ({ navigation }) => {
             />
           </LoadingContainer>
         )}
-        <Search />
+        <Search
+          isFavouritesToggled={isToggled}
+          onFavouritesToggle={() => setIsToggled(!isToggled)}
+        />
+        {isToggled && (
+          <FavouritesBar
+            favourites={favourites}
+            goToDetail={navigation.navigate}
+          />
+        )}
         <RestaurantList
           data={restaurants}
           renderItem={({ item }) => {
