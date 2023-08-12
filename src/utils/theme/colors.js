@@ -17,10 +17,12 @@ export const colors = {
     primary: "#f3faf2",
     secondary: "#97FEED",
     tertiary: "#feefec",
+    quaternary: "#fae17d",
   },
   text: {
-    primary: "#0a62fa",
+    primary: "#47a2fc",
     secondary: "#f07b32",
+    tertiary: "#d0271b",
     disabled: "#9c9c9c",
     inverse: "#ffffff",
     error: "#d0271b",
