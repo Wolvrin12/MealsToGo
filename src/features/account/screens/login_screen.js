@@ -40,7 +40,7 @@ export const LoginScreen = ({ navigation }) => {
         />
         {error && (
           <Spacer size="large" position="top">
-            <TypoText variant="error">{error}</TypoText>
+            <TypoText variant="error">Failed with error code: {error}</TypoText>
           </Spacer>
         )}
         <Spacer size="large" position="top">
