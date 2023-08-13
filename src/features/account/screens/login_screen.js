@@ -1,7 +1,7 @@
 import { AuthenticationContext } from "../../../firebase/auth/context";
 import { TypoText } from "../../../components/typography";
-import { Spacer } from "../../../components/spacer";
 import { useContext, useEffect, useState } from "react";
+import { Spacer } from "../../../components/spacer";
 import {
   AuthCover,
   AuthInput,
@@ -15,6 +15,7 @@ export const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const { onLogin, error } = useContext(AuthenticationContext);
   const [isErrorVisible, setIsErrorVisible] = useState(false);
+  const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(true);
 
   const checkError = () => {
     setIsErrorVisible(true);
@@ -22,6 +23,14 @@ export const LoginScreen = ({ navigation }) => {
       setIsErrorVisible(false);
     }, 5000);
   };
+
+  useEffect(() => {
+    if (email && password) {
+      setIsLoginButtonDisabled(false);
+    } else {
+      setIsLoginButtonDisabled(true);
+    }
+  }, [email, password]);
 
   return (
     <AuthBackground>
@@ -55,6 +64,7 @@ export const LoginScreen = ({ navigation }) => {
           <AuthButton
             mode="contained"
             icon="lock-open-outline"
+            disabled={isLoginButtonDisabled}
             onPress={() => {
               onLogin(email, password);
               checkError();
