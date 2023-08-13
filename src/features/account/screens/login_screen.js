@@ -16,12 +16,12 @@ export const LoginScreen = ({ navigation }) => {
   const { onLogin, error } = useContext(AuthenticationContext);
   const [isErrorVisible, setIsErrorVisible] = useState(false);
 
-  useEffect(() => {
+  const checkError = () => {
     setIsErrorVisible(true);
     setTimeout(() => {
       setIsErrorVisible(false);
-    }, 10000);
-  }, [error]);
+    }, 5000);
+  };
 
   return (
     <AuthBackground>
@@ -57,6 +57,7 @@ export const LoginScreen = ({ navigation }) => {
             icon="lock-open-outline"
             onPress={() => {
               onLogin(email, password);
+              checkError();
             }}
           >
             Login
@@ -64,7 +65,13 @@ export const LoginScreen = ({ navigation }) => {
         </Spacer>
       </AuthContainer>
       <Spacer size="large">
-        <AuthButton mode="contained" onPress={() => navigation.goBack()}>
+        <AuthButton
+          mode="contained"
+          onPress={() => {
+            navigation.goBack();
+            setIsErrorVisible(false);
+          }}
+        >
           Back
         </AuthButton>
       </Spacer>
