@@ -1,7 +1,7 @@
 import { AuthenticationContext } from "../../../firebase/auth/context";
 import { TypoText } from "../../../components/typography";
 import { Spacer } from "../../../components/spacer";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import {
   AuthCover,
   AuthInput,
@@ -14,6 +14,14 @@ export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { onLogin, error } = useContext(AuthenticationContext);
+  const [isErrorVisible, setIsErrorVisible] = useState(false);
+
+  useEffect(() => {
+    setIsErrorVisible(true);
+    setTimeout(() => {
+      setIsErrorVisible(false);
+    }, 10000);
+  }, [error]);
 
   return (
     <AuthBackground>
@@ -38,7 +46,7 @@ export const LoginScreen = ({ navigation }) => {
           secure
           onChangeText={setPassword}
         />
-        {error && (
+        {isErrorVisible && error && (
           <Spacer size="large" position="top">
             <TypoText variant="error">Failed with error code: {error}</TypoText>
           </Spacer>
