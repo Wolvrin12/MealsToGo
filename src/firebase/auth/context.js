@@ -4,8 +4,8 @@ import { loginRequest } from "./service";
 export const AuthenticationContext = createContext();
 
 export const AuthenticationContextProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
 
   const onLogin = (email, password) => {
@@ -16,14 +16,20 @@ export const AuthenticationContextProvider = ({ children }) => {
         setIsLoading(false);
       })
       .catch((err) => {
-        setError(err);
         setIsLoading(false);
+        setError(err.toString());
       });
   };
 
   return (
     <AuthenticationContext.Provider
-      value={{ isAuthenticad: !user, user, isLoading, error, onLogin }}
+      value={{
+        isAuthenticated: !!user,
+        user,
+        isLoading,
+        error,
+        onLogin,
+      }}
     >
       {children}
     </AuthenticationContext.Provider>

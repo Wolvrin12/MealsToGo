@@ -1,18 +1,20 @@
 import { Spacer } from "../../../components/spacer";
 import { theme } from "../../../utils/theme/index";
 import {
-  AccountCover,
-  AccountButton,
-  AccountContainer,
-  AccountBackground,
+  AuthTitle,
+  AuthCover,
+  AuthButton,
+  AuthContainer,
+  AuthBackground,
 } from "../styles/styles";
 
 export const AccountScreen = ({ navigation }) => {
   return (
-    <AccountBackground>
-      <AccountCover />
-      <AccountContainer>
-        <AccountButton
+    <AuthBackground>
+      <AuthCover />
+      <AuthTitle>Meals To Go</AuthTitle>
+      <AuthContainer>
+        <AuthButton
           icon="login"
           mode="contained"
           textColor={theme.colors.text.tertiary}
@@ -20,9 +22,9 @@ export const AccountScreen = ({ navigation }) => {
           onPress={() => navigation.navigate("Login Screen")}
         >
           Login
-        </AccountButton>
+        </AuthButton>
         <Spacer position="top" size="large" />
-        <AccountButton
+        <AuthButton
           icon="account-plus"
           mode="contained"
           textColor={theme.colors.text.tertiary}
@@ -30,8 +32,8 @@ export const AccountScreen = ({ navigation }) => {
           onPress={() => navigation.navigate("Register Screen")}
         >
           Register
-        </AccountButton>
-      </AccountContainer>
-    </AccountBackground>
+        </AuthButton>
+      </AuthContainer>
+    </AuthBackground>
   );
 };
