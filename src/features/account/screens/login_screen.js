@@ -3,6 +3,7 @@ import { TypoText } from "../../../components/typography";
 import { useContext, useEffect, useState } from "react";
 import { Spacer } from "../../../components/spacer";
 import {
+  AuthTitle,
   AuthCover,
   AuthInput,
   AuthButton,
@@ -35,6 +36,7 @@ export const LoginScreen = ({ navigation }) => {
   return (
     <AuthBackground>
       <AuthCover />
+      <AuthTitle>Meals To Go</AuthTitle>
       <AuthContainer>
         <AuthInput
           label="E-mail"

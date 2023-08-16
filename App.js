@@ -12,6 +12,7 @@ import { theme } from "./src/utils/theme/index";
 import { auth } from "./src/firebase/config";
 import { StatusBar } from "expo-status-bar";
 import { useState, useEffect } from "react";
+import { ActivityIndicator } from "react-native-paper";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -29,6 +30,7 @@ const App = () => {
   }, []);
 
   let [fontsLoaded] = useFonts({
+    "Space Adventure Italic": require("./assets/fonts/Space_Adventure_Italic.ttf"),
     Nunito_600SemiBold,
     Ubuntu_400Regular,
     Rubik_400Regular,
