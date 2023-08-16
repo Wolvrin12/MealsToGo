@@ -1,5 +1,12 @@
-import { AccountBackground, AccountCover } from "../styles/styles";
+import {
+  AccountCover,
+  AccountBackground,
+} from "../../../styles/account_styles";
 
 export const RegisterScreen = () => {
-  return <AccountBackground />;
+  return (
+    <AccountBackground>
+      <AccountCover />
+    </AccountBackground>
+  );
 };

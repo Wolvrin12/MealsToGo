@@ -1,6 +1,6 @@
-import { LocationContext } from "../../restaurants/services/locations/context";
+import { LocationContext } from "../../../services/locations/context";
 import { useContext, useEffect, useState } from "react";
-import { MapSearch } from "../styles/map_styles";
+import { MapSearch } from "../../../styles/map_styles";
 import { Searchbar } from "react-native-paper";
 
 export const Search = () => {

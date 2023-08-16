@@ -6,13 +6,13 @@ import open from "../../../../assets/open";
 import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 import {
-  CardPreferences,
-  RestaurantCard,
-  CardContent,
-  CardRating,
-  CardStatus,
   Icon,
-} from "../styles/restaurants_styles";
+  CardStatus,
+  CardRating,
+  CardContent,
+  RestaurantCard,
+  CardPreferences,
+} from "../../../styles/restaurants_styles";
 
 export const RestaurantCardGenerator = ({ restaurant = {} }) => {
   const {

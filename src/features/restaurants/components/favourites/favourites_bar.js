@@ -1,7 +1,7 @@
 import { MapCompactInfo } from "../../../map/components/map_compact_info";
+import { FavouritesWrapper } from "../../../../styles/favourites_styles";
 import { TypoText } from "../../../../components/typography";
 import { ScrollView, TouchableOpacity } from "react-native";
-import { FavouritesWrapper } from "./favourites_styles";
 import { Spacer } from "../../../../components/spacer";
 
 export const FavouritesBar = ({ favourites, goToDetail }) => {

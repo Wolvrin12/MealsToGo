@@ -1,7 +1,8 @@
-import { FavouritesContextProvider } from "./src/features/restaurants/services/favourites/context";
-import { LocationContextProvider } from "./src/features/restaurants/services/locations/context";
-import { RestaurantsContextProvider } from "./src/features/restaurants/services/data/context";
+import Space_Adventure_Italic from "./src/assets/fonts/Space_Adventure_Italic.ttf";
+import { FavouritesContextProvider } from "./src/services/favourites/context";
 import { AuthenticationContextProvider } from "./src/firebase/auth/context";
+import { LocationContextProvider } from "./src/services/locations/context";
+import { RestaurantsContextProvider } from "./src/services/restaurants/context";
 import { useFonts, Nunito_600SemiBold } from "@expo-google-fonts/nunito";
 import { NavigationProvider } from "./src/navigation/navigation";
 import { Ubuntu_400Regular } from "@expo-google-fonts/ubuntu";
@@ -27,7 +28,7 @@ const App = () => {
   }, []);
 
   let [fontsLoaded] = useFonts({
-    "Space Adventure Italic": require("./assets/fonts/Space_Adventure_Italic.ttf"),
+    "Space Adventure Italic": Space_Adventure_Italic,
     Nunito_600SemiBold,
     Ubuntu_400Regular,
     Rubik_400Regular,

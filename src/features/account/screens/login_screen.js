@@ -9,7 +9,7 @@ import {
   AuthButton,
   AuthContainer,
   AuthBackground,
-} from "../styles/styles";
+} from "../../../styles/account_styles";
 
 export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");

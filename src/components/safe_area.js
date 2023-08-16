@@ -1,5 +1,5 @@
-import { styled } from "styled-components";
 import { SafeAreaView, StatusBar } from "react-native";
+import { styled } from "styled-components";
 
 export const SafeArea = styled(SafeAreaView)`
   flex: 1;

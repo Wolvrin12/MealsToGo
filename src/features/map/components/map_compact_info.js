@@ -4,7 +4,7 @@ import {
   MapCompactWebView,
   MapCompactImg,
   MapItem,
-} from "../styles/map_styles";
+} from "../../../styles/map_styles";
 
 const isAndroid = Platform.OS === "android";
 

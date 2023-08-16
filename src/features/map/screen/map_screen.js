@@ -1,10 +1,10 @@
-import { LocationContext } from "../../restaurants/services/locations/context";
-import { RestaurantsContext } from "../../restaurants/services/data/context";
+import { RestaurantsContext } from "../../../services/restaurants/context";
+import { LocationContext } from "../../../services/locations/context";
 import { MapCallout } from "../components/map_callout";
 import { useContext, useEffect, useState } from "react";
 import { Marker, Callout } from "react-native-maps";
 import { Search } from "../components/map_search";
-import { Map } from "../styles/map_styles";
+import { Map } from "../../../styles/map_styles";
 
 export const MapScreen = ({ navigation }) => {
   const { location } = useContext(LocationContext);
