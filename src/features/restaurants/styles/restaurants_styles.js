@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 
 export const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
-  margin: ${(props) => props.theme.space[2]};
+  margin: ${(props) => props.theme.spaces[2]};
 `;
 
 export const LoadingContainer = styled(View)`
@@ -18,7 +18,7 @@ export const Loading = styled(ActivityIndicator)`
 `;
 
 export const RestaurantsSearch = styled(View)`
-  padding: ${(props) => props.theme.space[3]};
+  padding: ${(props) => props.theme.spaces[3]};
 `;
 
 export const RestaurantList = styled(FlatList).attrs({
@@ -28,7 +28,7 @@ export const RestaurantList = styled(FlatList).attrs({
 })``;
 
 export const CardContent = styled(Card.Content)`
-  padding: ${(props) => props.theme.space[3]};
+  padding: ${(props) => props.theme.spaces[3]};
 `;
 
 export const CardPreferences = styled(View)`
@@ -38,7 +38,7 @@ export const CardPreferences = styled(View)`
 
 export const CardRating = styled(View)`
   flex-direction: row;
-  padding: ${(props) => props.theme.space[2]} 0;
+  padding: ${(props) => props.theme.spaces[2]} 0;
 `;
 
 export const CardStatus = styled(View)`
@@ -53,7 +53,7 @@ export const Icon = styled(Image)`
 `;
 
 export const CardAdress = styled(Text)`
-  padding: ${(props) => props.theme.space[2]} 0;
+  padding: ${(props) => props.theme.spaces[2]} 0;
   color: ${(props) => props.theme.colors.text.secondary};
   font-size: ${(props) => props.theme.fontSizes.caption};
   font-family: ${(props) => props.theme.fonts.monospace};

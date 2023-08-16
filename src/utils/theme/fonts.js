@@ -1,8 +1,8 @@
 export const fonts = {
-  logo: "Space Adventure Italic",
   body: "Nunito_600SemiBold",
   heading: "Ubuntu_400Regular",
   monospace: "Rubik_400Regular",
+  logo: "Space Adventure Italic",
 };
 
 export const fontWeights = {
@@ -16,9 +16,8 @@ export const fontSizes = {
   label: "14px",
   body: "16px",
   title: "20px",
-  h5: "24px",
-  h4: "34px",
-  h3: "44px",
-  h2: "54px",
-  h1: "104px",
+  h4: "35px",
+  h3: "45px",
+  h2: "55px",
+  h1: "100px",
 };

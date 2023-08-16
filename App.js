@@ -12,7 +12,6 @@ import { theme } from "./src/utils/theme/index";
 import { auth } from "./src/firebase/config";
 import { StatusBar } from "expo-status-bar";
 import { useState, useEffect } from "react";
-import { ActivityIndicator } from "react-native-paper";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -23,9 +22,7 @@ const App = () => {
         setIsAuthenticated(true);
       })
       .catch((err) => {
-        console.log("====================================");
         console.log("error", err);
-        console.log("====================================");
       });
   }, []);
 

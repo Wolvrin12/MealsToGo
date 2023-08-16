@@ -9,7 +9,7 @@ export const Map = styled(MapView)`
 `;
 
 export const MapSearch = styled(View)`
-  padding: ${(props) => props.theme.space[3]};
+  padding: ${(props) => props.theme.spaces[3]};
   position: absolute;
   z-index: 999;
   top: 40px;

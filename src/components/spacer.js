@@ -16,7 +16,7 @@ const positionVariant = {
 
 const getVariant = (position, size, theme) => {
   const sizeIndex = sizeVariant[size];
-  const sizeValue = theme.space[sizeIndex];
+  const sizeValue = theme.spaces[sizeIndex];
   const positionIndex = positionVariant[position];
   return `${positionIndex}: ${sizeValue}`;
 };
