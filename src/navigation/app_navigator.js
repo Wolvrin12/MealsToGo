@@ -3,8 +3,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MapScreen } from "../features/map/screen/map_screen";
 import { SafeArea } from "../components/safe_area";
 import { Ionicons } from "@expo/vector-icons";
+import { Text, View } from "react-native";
 import { theme } from "../utils/theme";
-import { Text } from "react-native";
 
 const Tab = createBottomTabNavigator();
 

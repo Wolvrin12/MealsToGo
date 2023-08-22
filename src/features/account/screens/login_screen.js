@@ -1,4 +1,4 @@
-import { AuthenticationContext } from "../../../firebase/auth/context";
+import { AuthenticationContext } from "../../../services/auth/context";
 import { TypoText } from "../../../components/typography";
 import { useContext, useEffect, useState } from "react";
 import { Spacer } from "../../../components/spacer";
@@ -54,7 +54,6 @@ export const LoginScreen = ({ navigation }) => {
           textContentType="password"
           secureTextEntry
           autoCapitalize="none"
-          secure
           onChangeText={setPassword}
         />
         {isErrorVisible && error && (
@@ -65,7 +64,7 @@ export const LoginScreen = ({ navigation }) => {
         <Spacer size="large" position="top">
           <AuthButton
             mode="contained"
-            icon="lock-open-outline"
+            icon="login"
             disabled={isLoginButtonDisabled}
             onPress={() => {
               onLogin(email, password);

@@ -1,4 +1,4 @@
-import { FavouritesContext } from "../../../../services/locations/context";
+import { FavouritesContext } from "../../../../services/favourites/context";
 import { FavouriteBtn } from "../../../../styles/favourites_styles";
 import { AntDesign } from "@expo/vector-icons";
 import { useContext } from "react";

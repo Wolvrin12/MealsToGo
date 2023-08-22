@@ -1,4 +1,4 @@
-import { AuthenticationContext } from "../firebase/auth/context";
+import { AuthenticationContext } from "../services/auth/context";
 import { NavigationContainer } from "@react-navigation/native";
 import { AuthNavigator } from "./auth_navigator";
 import { AppNavigator } from "./app_navigator";

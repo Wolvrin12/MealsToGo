@@ -13,6 +13,7 @@ import {
   RestaurantList,
   LoadingContainer,
 } from "../../../styles/restaurants_styles";
+import { Text } from "react-native";
 
 export const Restaurants = ({ navigation }) => {
   const { restaurants, isLoading } = useContext(RestaurantsContext);
