@@ -1,7 +1,9 @@
 import { AuthenticationContext } from "../../../services/auth/context";
 import { TypoText } from "../../../components/typography";
 import { useContext, useEffect, useState } from "react";
+import { ActivityIndicator } from "react-native-paper";
 import { Spacer } from "../../../components/spacer";
+import { theme } from "../../../utils/theme/index";
 import {
   AuthTitle,
   AuthCover,
@@ -15,7 +17,7 @@ export const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatedPassword, setRepeatedPassword] = useState("");
-  const { onRegister, error } = useContext(AuthenticationContext);
+  const { onRegister, isLoading, error } = useContext(AuthenticationContext);
   const [isErrorVisible, setIsErrorVisible] = useState(false);
   const [isRegisterButtonDisabled, setIsRegisterButtonDisabled] =
     useState(true);
@@ -76,17 +78,25 @@ export const RegisterScreen = ({ navigation }) => {
           </Spacer>
         )}
         <Spacer size="large" position="top">
-          <AuthButton
-            mode="contained"
-            icon="account-plus"
-            disabled={isRegisterButtonDisabled}
-            onPress={() => {
-              onRegister(email, password, repeatedPassword);
-              checkError();
-            }}
-          >
-            Register
-          </AuthButton>
+          {!isLoading ? (
+            <AuthButton
+              mode="contained"
+              icon="account-plus"
+              disabled={isRegisterButtonDisabled}
+              onPress={() => {
+                onRegister(email, password, repeatedPassword);
+                checkError();
+              }}
+            >
+              Register
+            </AuthButton>
+          ) : (
+            <ActivityIndicator
+              animating={true}
+              size={50}
+              color={theme.colors.ui.secondary}
+            />
+          )}
         </Spacer>
       </AuthContainer>
       <Spacer size="large">

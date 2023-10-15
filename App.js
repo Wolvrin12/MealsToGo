@@ -1,8 +1,5 @@
 import Space_Adventure_Italic from "./src/assets/fonts/Space_Adventure_Italic.ttf";
-import { RestaurantsContextProvider } from "./src/services/restaurants/context";
-import { FavouritesContextProvider } from "./src/services/favourites/context";
 import { AuthenticationContextProvider } from "./src/services/auth/context";
-import { LocationContextProvider } from "./src/services/locations/context";
 import { useFonts, Nunito_600SemiBold } from "@expo-google-fonts/nunito";
 import { NavigationProvider } from "./src/navigation/navigation";
 import { Ubuntu_400Regular } from "@expo-google-fonts/ubuntu";
@@ -46,13 +43,7 @@ const App = () => {
     <>
       <ThemeProvider theme={theme}>
         <AuthenticationContextProvider>
-          <FavouritesContextProvider>
-            <LocationContextProvider>
-              <RestaurantsContextProvider>
-                <NavigationProvider />
-              </RestaurantsContextProvider>
-            </LocationContextProvider>
-          </FavouritesContextProvider>
+          <NavigationProvider />
         </AuthenticationContextProvider>
       </ThemeProvider>
       <StatusBar style="auto" />

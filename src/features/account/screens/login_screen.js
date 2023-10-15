@@ -1,7 +1,9 @@
 import { AuthenticationContext } from "../../../services/auth/context";
 import { TypoText } from "../../../components/typography";
 import { useContext, useEffect, useState } from "react";
+import { ActivityIndicator } from "react-native-paper";
 import { Spacer } from "../../../components/spacer";
+import { theme } from "../../../utils/theme/index";
 import {
   AuthTitle,
   AuthCover,
@@ -14,7 +16,7 @@ import {
 export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { onLogin, error } = useContext(AuthenticationContext);
+  const { onLogin, isLoading, error } = useContext(AuthenticationContext);
   const [isErrorVisible, setIsErrorVisible] = useState(false);
   const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(true);
 
@@ -62,17 +64,25 @@ export const LoginScreen = ({ navigation }) => {
           </Spacer>
         )}
         <Spacer size="large" position="top">
-          <AuthButton
-            mode="contained"
-            icon="login"
-            disabled={isLoginButtonDisabled}
-            onPress={() => {
-              onLogin(email, password);
-              checkError();
-            }}
-          >
-            Login
-          </AuthButton>
+          {!isLoading ? (
+            <AuthButton
+              mode="contained"
+              icon="login"
+              disabled={isLoginButtonDisabled}
+              onPress={() => {
+                onLogin(email, password);
+                checkError();
+              }}
+            >
+              Login
+            </AuthButton>
+          ) : (
+            <ActivityIndicator
+              animating={true}
+              size={50}
+              color={theme.colors.brand.secondary}
+            />
+          )}
         </Spacer>
       </AuthContainer>
       <Spacer size="large">
